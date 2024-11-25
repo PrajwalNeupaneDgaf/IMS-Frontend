@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create an Axios instance with default configuration
 const axiosInstance = axios.create({
-  baseURL: 'https://ims-college-project.netlify.app/', 
+  baseURL: 'https://ims-backend-uz8e.onrender.com/', 
  // baseURL: 'http://localhost:5000/api', 
 
   headers: {

@@ -117,7 +117,7 @@ const Dashboard = () => {
   ];
 
   return (
-    <Box bg={bg} p={6} borderRadius="md" boxShadow="xl" minH="80vh" display="flex" flexDirection="column">
+    <Box maxWidth={'96%'}  bg={bg} p={6} borderRadius="md" boxShadow="xl" minH="80vh" display="flex" flexDirection="column">
       <Heading size="md" mb={6} textAlign="center">
         Dashboard Overview
       </Heading>
@@ -134,11 +134,11 @@ const Dashboard = () => {
             _hover={{ boxShadow: '2xl', transform: 'scale(1.05)' }}
             transition="all 0.2s ease"
           >
-            <Stat>
+            <Stat maxW={'100%'}>
               <StatLabel fontSize="lg" fontWeight="medium" color={textColor}>
                 {stat.label}
               </StatLabel>
-              <StatNumber fontSize="3xl" fontWeight="bold" color={statBg}>
+              <StatNumber fontSize="2xl" fontWeight="bold" color={statBg}>
                 {stat.value}
               </StatNumber>
               <Tooltip label={stat.tooltip}>
@@ -159,7 +159,7 @@ const Dashboard = () => {
       </Grid>
 
       {/* Sales Chart */}
-      <Box bg={cardBg} p={6} borderRadius="lg" boxShadow="lg" mb={8}>
+      <Box display={['none','none','block','block']} className='max-w-[100%] overflow-hidden overflow-x-auto' bg={cardBg} p={6} borderRadius="lg" boxShadow="lg" mb={8}>
         <Heading size="sm" mb={4} color={textColor}>
           Sales Overview (Last 6 Months)
         </Heading>
@@ -182,9 +182,7 @@ const Dashboard = () => {
       </Box>
 
       {/* Additional info */}
-      <Text fontSize="lg" mt={8} color={textColor}>
-        More detailed statistics and interactive graphs will be shown here.
-      </Text>
+      
     </Box>
   );
 };

@@ -203,8 +203,8 @@ const ManageEntitiesPage = () => {
       </Heading>
 
       <Box mb={4}>
-        <FormControl display="flex" alignItems="center" gap={3}>
-        <Button colorScheme="teal" onClick={() => handleOpenModal()} fontSize="sm">
+        <FormControl display="flex" flexDirection={['column','column','row','row']} alignItems="center" gap={3}>
+        <Button maxW={'100%'} colorScheme="teal" onClick={() => handleOpenModal()} fontSize="sm">
             Add New Entity
           </Button>
           <Input
@@ -215,6 +215,7 @@ const ManageEntitiesPage = () => {
             width="300px"
           />
           <Select
+            w={'100%'}
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
             placeholder="Filter by Type"
@@ -227,7 +228,8 @@ const ManageEntitiesPage = () => {
         </FormControl>
       </Box>
 
-      <Table variant="simple" fontSize="sm">
+     <Box className='max-w-[100%] overflow-hidden overflow-x-auto'>
+     <Table variant="simple" fontSize="sm">
         <Thead fontFamily={'12px'}>
           <Tr>
             <Th>Type</Th>
@@ -274,6 +276,7 @@ const ManageEntitiesPage = () => {
         </Tbody>
       </Table>
 
+     </Box>
       <Modal isOpen={deleting} onClose={() => {
         setDeleting(false);
       }}>

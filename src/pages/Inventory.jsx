@@ -95,7 +95,7 @@ const Inventory = () => {
       <Heading mb={6}>Inventory Management</Heading>
 
       {/* Search and Filter Section */}
-      <Grid templateColumns="1fr 2fr 1fr" gap={6} mb={6}>
+      <Grid templateColumns={["1fr ","1fr 1fr","1fr 2fr 1fr"]} gap={6} mb={6}>
         <Input
           placeholder="Search by name or SKU"
           value={searchTerm}
@@ -146,7 +146,7 @@ const Inventory = () => {
 
       {/* Inventory Table */}
       <Box overflowX="auto">
-        <Table variant="simple" overflowX={'scroll'} bg={tableBg} borderRadius="md" boxShadow="sm">
+        <Table fontSize={['xs,sm.md']} variant="simple" overflowX={'scroll'} bg={tableBg} borderRadius="md" boxShadow="sm">
           <Thead>
             <Tr>
               <Th fontSize={'sm'}>Item</Th>

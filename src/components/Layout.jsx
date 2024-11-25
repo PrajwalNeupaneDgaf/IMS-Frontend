@@ -1,4 +1,4 @@
-import { Box, Button, Center, Container, useColorModeValue } from '@chakra-ui/react';
+import { Box, Container, useColorModeValue } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
@@ -10,22 +10,23 @@ function Layout({ children }) {
   const bgColor = useColorModeValue('gray.50', 'gray.900');
   
   if (!isAuthenticated) {
-    return (
-      <NotAuthenticated/>
-    )
+    return <NotAuthenticated />;
   }
 
   return (
     <Box minH="100vh" bg={bgColor}>
+      {/* Navbar */}
       <Navbar />
-      <Container maxW="container.xl" px={4}>
-        <Box display="flex" gap={6} pt={20}>
-          <Sidebar />
-          <Box flex={1} py={8}>
-            {children}
-          </Box>
+      
+      {/* Main layout container */}
+      <Box display="flex" pt={16}> {/* Adjust pt to ensure content is below navbar */}
+        <Sidebar />
+
+        {/* Content area */}
+        <Box flex={1} p={4} overflowY="auto">
+          {children}
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 }
